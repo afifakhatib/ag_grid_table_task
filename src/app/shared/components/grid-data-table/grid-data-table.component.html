@@ -1,0 +1,34 @@
+
+
+<div class="ag-theme-alpine" style="height : 250px ; width : 100%">
+    <ag-grid-angular
+    style="width : 100% ; height : 100%"
+    class="ag-theme-alpine"
+    [rowData]="rowData"
+    [columnDefs]="colDefs"
+    rowSelection="multiple"
+    (rowSelected)="onRowSelected($event)">
+    </ag-grid-angular>
+</div>
+
+<div class="card mt-4">
+    <div class="card-header">
+        <h1>Form Data</h1>
+    </div>
+    <div class="card-body">
+            <input class="form-control mb-3" type="text" placeholder="Rule Name" [(ngModel)]="formData.ruleName">
+            <input class="form-control mb-3" type="text" placeholder="Active" [(ngModel)]="formData.active">
+            <input class="form-control mb-3" type="text" placeholder="Type" [(ngModel)]="formData.type">
+            <input class="form-control mb-3" type="text" placeholder="Sub Type" [(ngModel)]="formData.subType">
+            <input class="form-control mb-3" type="number" placeholder="Impacted" [(ngModel)]="formData.impacted">
+            <input class="form-control mb-3" type="text" placeholder="Scheduled" [(ngModel)]="formData.scheduled">
+            <input class="form-control mb-3" type="text" placeholder="Last Scheduled Date" [(ngModel)]="formData.lastScheduledDate">
+            <input class="form-control mb-3" type="text" placeholder="Alert" [(ngModel)]="formData.alert">
+    </div>
+    <div class="card-footer">
+        <div class="btngroup d-flex justify-content-between">
+            <button class="btn btn-sm btn-primary" (click)="onSave()">Save</button>
+            <button class="btn btn-sm btn-primary" (click)="onUpdate()">Update</button>
+           </div>
+    </div>
+</div>
